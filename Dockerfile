@@ -13,7 +13,6 @@ ADD . /base-directory
 
 WORKDIR /base-directory
 
-RUN pip3 install -y \
-    -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # RUN ansible-galaxy collection install -r requirements.yml

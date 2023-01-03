@@ -1,0 +1,9 @@
+hosts: all
+tasks:
+  roles:
+    - { role: falcon.firwall, tags: "bla","bla2" }
+    - { role: falcon.sshd, tags: "optimized" }
+    - { role: falcon.docker, tags: "secure" }
+    
+
+  

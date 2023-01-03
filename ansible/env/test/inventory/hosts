@@ -1,0 +1,17 @@
+# TODO
+# mount keys directory for the container environment
+
+# master_container.keys ==> hosts[]
+
+
+
+# parent host machine
+[test_group_falcon]
+falcon_nest_test                                            ansible_private_key_file=storage/ansible-keys/
+
+#TEST 
+[validators]
+[validators:children]
+
+validator_test_kusama_group                                 ansible_private_key_file=storage/ansible-keys/
+validator_test_polkadot_group                               ansible_private_key_file=storage/ansible-keys/

@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y \
     git \
     python3-pip
 
-RUN mkdir /root
+RUN mkdir /base-directory
 
-ADD . /root
+ADD . /base-directory
 
-WORKDIR /root
+WORKDIR /base-directory
 
 RUN pip3 install -y \
     -r requirements.txt

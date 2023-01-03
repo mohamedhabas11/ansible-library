@@ -1,9 +1,20 @@
 hosts: all
+
+pre_tasks:
+  # stay on the safe side of the spec
+  - name: check cpu architecture
+    raw: lscpu 
+    register: $CPU_architechure
+    fail_when: "x86-64"
+
+  - name: check network bandwith
+    raw: 
+
 tasks:
   roles:
-    - { role: falcon.firwall, tags: "bla","bla2" }
+    - { role: falcon.ufw, tags: "bla","bla2" }
     - { role: falcon.sshd, tags: "optimized" }
     - { role: falcon.docker, tags: "secure" }
-    
+
 
   

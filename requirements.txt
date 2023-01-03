@@ -1,1 +1,3 @@
 # dump all python dependencies here :) 
+speedtest-cli
+pyserial

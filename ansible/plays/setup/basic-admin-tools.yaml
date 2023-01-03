@@ -1,0 +1,16 @@
+---
+ - name: Ansible validate if the packages are installed
+   hosts: all
+   become: true
+   tasks: 
+
+    - name: Gather Package facts
+      package_facts:
+        manager: auto
+    
+    - name: Validating if the package is installed or not
+      debug: 
+        msg: "{{item}} is installed"
+      when: '"{{item}}" in ansible_facts.packages'
+      with_items:
+        - speedtest-cli
